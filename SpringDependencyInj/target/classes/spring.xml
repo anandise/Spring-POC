@@ -3,7 +3,9 @@
 
 <beans>
 <bean id="triangle" class="Triangle">
-<property name="type" value="Equilateral">
-</property>
+<!-- <property name="type" value="Equilateral"> </property>  setter injection-->
+<constructor-arg value="Equilateral"/>                   <!-- constructor Injection -->  
+<constructor-arg value="20"/>                   <!-- constructor Injection -->  
+
 </bean>
 </beans>
