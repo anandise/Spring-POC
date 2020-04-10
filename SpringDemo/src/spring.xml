@@ -2,20 +2,22 @@
 <!DOCTYPE beans PUBLIC "-//SPRING//DTD BEAN 2.0//EN" "http://www.springframework.org/dtd/spring-beans-2.0.dtd">
 
 <beans>
-<bean id="triangle" class="InnerBean.Triangle">
-<property name="pointA" ref="point1"/>
-<property name="pointB">
-	<bean class="InnerBean.Point">
-		<property name="x" value="-20"/>
-		<property name="y" value="0"/>
-	</bean>
-</property>	
-<property name="pointC">
-	<bean class="InnerBean.Point">
-		<property name="x" value="20"/>
-		<property name="y" value="0"/>
-	</bean>
-</property>
+	<bean id="triangle" class="InnerBean.Triangle">
+		<property name="pointA">
+			<idref = "point1"/>
+		</property>
+	<property name="pointB">
+		<bean class="InnerBean.Point">
+			<property name="x" value="-20"/>
+			<property name="y" value="0"/>
+		</bean>
+	</property>	
+	<property name="pointC">
+		<bean class="InnerBean.Point">
+			<property name="x" value="20"/>
+			<property name="y" value="0"/>
+		</bean>
+	</property>
 </bean>
 
 <bean id="point1" class="InnerBean.Point">
@@ -24,7 +26,7 @@
 </bean>
 
 
-
+<alias name="triangle" alias="triangle-alias"/>
 
 
 </beans>
